@@ -1,58 +1,76 @@
-body{
-    background-image: linear-gradient(45deg, red, yellow);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
 }
 
 .login {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color:#00000081;
+    
+    background-color:#ffffff81;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     padding: 60px;
     border-radius: 30px;
-    color: white;
+    
 }
 
-input{
+.login-title{
+    text-align: center;
+    color: rgb(12, 11, 11);
+    font-size: 3em;
+
+}
+
+input {
+    background-color: transparent;
+    display: inline-block;
+    border: 0;
+    border-bottom: 2px solid #00000080;
     padding: 15px;
-    border: none;
-    outline: none;
     font-size: 20px;
+    border-radius: 0;
+   
 }
 
 .validar{
-    background-color: dodgerblue;
-    display:inline-block;
-    text-align: center;
-    color: black;
-    border: none;
-    outline: none;
+    background-color: #0505059a;
+    background-color: transparent;
     padding: 15px;
-    width: 90%;
-    border-radius: 15px;
+    width: 100%;
+    border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
+    transition: all .3s ease-out;
 }
 
 
 
 #entrar{
-    background-color: dodgerblue;
-    border: none;
+    background-color:#0505059a;
+    background-color: transparent;
     padding: 15px;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
     display: none;
+    transition: all .3s ease-out;
 }
 
-.entrar:hover{
-    background-color: deepskyblue;
+#entrar:hover{
+    background-color: #848688;
 }
 .validar:hover {
-    background-color: aqua;
+    background-color: #848688;
     
 }
 

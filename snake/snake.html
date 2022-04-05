@@ -8,140 +8,33 @@
     <link rel="stylesheet" href="/style.css/style.css">
 </head>
 <body>
+    <img src="/img/fundo-back.jpg" alt="">
     <div class="login">
-        <h1>Login</h1>
+
+        <h1 class="login-title">Login</h1>
         
         <br>
 
-        <input type="text" placeholder="Nome">
+        <input type="text" placeholder="Usuario">
         
         <br><br>
         
         <input type="password" placeholder="Senha">
         
-        <br><br>
+        <br><br><br>
 
         <button id="validar" class="validar"> Validar </button>
                 <br> <br>
 
-        <canvas id="stage" width="250" height="250" class="stage"></canvas>
+        <canvas id="stage" width="280" height="200" class="stage"></canvas>
 
-        <br><br>
+        <br>
     
         <button id="entrar" class="entrar">Entrar</button>
+        
 
     </div>
-    <script type="text/javascript">
-       document.querySelector("#validar").onclick = function(){
-
-        const canvas = document.querySelector("#stage");
-        canvas.style.display = "block";
-
-       }
-
-        window.onload = function(){
- 
-            var stage = document.getElementById('stage');
-            var ctx = stage.getContext("2d");
-            document.addEventListener("keydown", keyPush);
-            setInterval(game, 80);
-            let entrar = document.getElementById('entrar')
-
-
-            const vel = 1;
- 
-            var vx = vy = 0;
-            var px =10;
-            var py = 10;
-            var tp = 15;
-            var qp = 20;
-            var ax=ay=5;
- 
-            var trail = [];
-            tail = 25;
-
- 
-            function game(){
-                px += vx;
-                py += vy;
-                if (px <0) {
-                    px = qp-1;
-                }
-                if (px > qp-1) {
-                    px = 0;
-                }
-                if (py < 0) {
-                    py = qp-1;
-                }
-                if (py > qp-1) {
-                    py = 0;
-                }
- 
-                ctx.fillStyle = "#00000081";
-                ctx.fillRect(0,0, stage.width, stage.height);
- 
-                ctx.fillStyle = "blue";
-                ctx.fillRect(ax*tp, ay*tp, tp,tp);
- 
-                ctx.fillStyle = "gray";
-                for (var i = 0; i < trail.length; i++) {
-                    ctx.fillRect(trail[i].x*tp, trail[i].y*tp, tp-1,tp-1);
-                    if (trail[i].x == px && trail[i].y == py)
-                    {
-                        vx = vy=0;
-                        tail =5;
-                    }
-                }
- 
-                trail.push({x:px,y:py })
-                while (trail.length > tail) {
-                    trail.shift();
-                }
-                
-                //if (ax==px && ay==py){
-                    //tail++;
-                    //ax = Math.floor(Math.random()*qp);
-                    //ay = Math.floor(Math.random()*qp);
-                //}
-                
-                function entrar(ax=px && ay==py){
-                   let entrar = document.getElementById('entrar');
-                   
-                   entrar.style.display = 'block';
-                }
- 
-            }
- 
-            function keyPush(event){
- 
-                switch (event.keyCode) {
-                    case 37: // Left
-                        vx = -vel;
-                        vy = 0;
-                        break;
-                    case 38: // up
-                        vx = 0;
-                        vy = -vel;
-                        break;
-                    case 39: // right
-                        vx = vel;
-                        vy = 0;
-                        break;
-                    case 40: // down
-                        vx = 0;
-                        vy = vel;
-                        break;          
-                    default:
-                        
-                        break;
-                }
- 
- 
-            }
- 
-        }
- 
-    </script>
+    <script src="/js.script.js" type="text/javascript"></script>
 </body>
 </html>
 
